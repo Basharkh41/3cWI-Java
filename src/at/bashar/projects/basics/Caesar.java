@@ -9,6 +9,7 @@ public class Caesar {
         String text = input.nextLine();
         int offset = 2;
 
+
         char [] meinArray = text.toCharArray();
         char [] meinNeuesArray = verschluesseln(offset, meinArray);
 

@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Dicegame {
     public static void main(String[] args) {
-
         System.out.println("Enter the Dice Number, it must be between 1 and 6: ");
         Scanner DiceNumber = new Scanner(System.in);
         int DiceNumberint = DiceNumber.nextInt();
@@ -52,6 +51,7 @@ public class Dicegame {
         System.out.println("");
         System.out.println("Computer's Total: " + totalCpmtr);
         DiceNumber.close();
+
 
         }
     }
