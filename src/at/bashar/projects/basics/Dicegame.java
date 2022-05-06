@@ -53,35 +53,5 @@ public class Dicegame {
         System.out.println("Computer's Total: " + totalCpmtr);
         DiceNumber.close();
 
-
-
-        for (int i = 0; i < DiceNumberint; i++) {
-            randomNumberUser = ranNumber.nextInt(6) + 1;
-            totalUser = totalUser + randomNumberUser;
-
-            System.out.print(" ");
-
-            randomNumbercmptr = ranNumbercmptr.nextInt(6) + 1;
-            totalCpmtr = totalCpmtr + randomNumbercmptr;
-
-            System.out.print(" ");
         }
-
-        System.out.println("");
-        System.out.println("your Total: " + totalUser);
-        DiceNumber.close();
-
-        System.out.println("");
-        System.out.println("Computer's Total: " + totalCpmtr);
-        DiceNumber.close();
-
-        if(totalUser > totalCpmtr){
-            System.out.println("\n" + "You've won!!!");
-        }
-        else{
-            System.out.println("\n" +"Computer have won!!!");
-
-        }
-
     }
-}
