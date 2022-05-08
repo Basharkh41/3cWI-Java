@@ -52,6 +52,12 @@ public class Dicegame {
         System.out.println("Computer's Total: " + totalCpmtr);
         DiceNumber.close();
 
+        if ( totalUser > totalCpmtr){
+            System.out.println("\nYou've Won!!!");
+        }
+            else {
+            System.out.println("\nComputer have won!!!");
+        }
 
         }
     }
