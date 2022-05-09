@@ -1,71 +1,56 @@
 package at.bashar.projects.basics;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class StringHelper {
-        public static int isPalindrom() {
-            String Palindrom, reverse = "";
-            System.out.println("please enter your text here: ");
-            Scanner Palindrominput = new Scanner(System.in);
-            Palindrom = Palindrominput.nextLine();
-            int length = Palindrom.length();
 
-            for (int i = length - 1; i >= 0; i--) {
-                reverse = reverse + Palindrom.charAt(i);
-            }
-            if (Palindrom.equals(reverse)) {
-                System.out.println("Entered text is a palindrome.");
-            } else {
-                System.out.println("Entered text isn't a palindrome!");
-            }
-        return 0;
+    public static void CountHowManyWords(){
+        System.out.println("please enter a text to see how many letters your text have: ");
+        Scanner input = new Scanner(System.in);
+        String i = input.nextLine();
+        System.out.println("Excluding white spaces "+ i.replaceAll(" ", "").length());
+    }
+    public static void isPalindrome(){
+        System.out.println("please enter a text to see if your text/word is a palindrome:");
+        Scanner input = new Scanner(System.in);
+        String i = input.nextLine();
+        if(i.charAt(0)==i.charAt(i.length()-1)) {
+            System.out.println("it is indeed a palindrome");
+        }else{
+            System.out.println("it is not a palindrome");
         }
+    }
 
-
-        public static int countLetters(){
-            System.out.println("please enter your text here:");
-            Scanner countLettersInput = new Scanner(System.in);
-            String countLettersString = countLettersInput.nextLine();
-            int countLettersInt = countLettersInput.nextInt();
-            for (int i = 0; i < countLettersString.length(); i++){
-                if(Character.isLetter(countLettersString.charAt(i))){
-                    countLettersInt++;
-                }
-                System.out.println("Letters: " + countLettersInt);
-            }
-        return 0;
+    static void CountWords(){
+        System.out.println("please enter a text to see how many words your text have: ");
+        Scanner input = new Scanner(System.in);
+        String i = input.nextLine();
+        String[] words = i.split("\\s+");
+        System.out.println(words.length);
+    }
+    static void ReverseString(){
+        System.out.println("please enter a text to reverse it:");
+        Scanner input = new Scanner(System.in);
+        String i = input.nextLine();
+        String words[]=i.split("\\s");
+        String reverseWord = "";
+        for(String w:words){
+            StringBuilder sb = new StringBuilder(w);
+            sb.reverse();
+            reverseWord+=sb.toString()+" ";
         }
-        public static int reverseString(){
-            System.out.println("please enter your text here:");
-            Scanner reverseStringInput = new Scanner(System.in);
-            String reverseStringstring = reverseStringInput.nextLine();
-            StringBuilder output = new StringBuilder(reverseStringstring);
-            output.reverse();
-            System.out.println("here is your reversed text: " + output);
-            return 0;
+        System.out.println(reverseWord);
+    }
 
-        }
-
-        public static int getAmountOfLetters(){
-            System.out.println("please enter your text here:");
-            Scanner getAmountOfLettersInput = new Scanner(System.in);
-            String getAmountOfLettersstring = getAmountOfLettersInput.nextLine();
-            if (getAmountOfLettersstring == null || getAmountOfLettersstring.isEmpty()){
-                return 0;
-            }
-            String[] words = getAmountOfLettersstring.split("\\s+");
-            return words.length;
-
-        }
-
+    
     public static void main(String[] args) {
-
 
 
         System.out.println("Please enter your name: ");
         Scanner a = new Scanner(System.in);
         String input = a.nextLine();
 
-        System.out.println("Hallo " + input + " what do you want to do with your text?");
+        System.out.println("Hallo " + input +" what do you want to do with your text?");
         System.out.println("\n");
         System.out.println("1. is my text a Palindrome?");
         System.out.println("2. how many letters does my text contain?");
@@ -73,26 +58,34 @@ public class StringHelper {
         System.out.println("4. how many words does my text contain?");
         System.out.println("5. Stop the program");
 
-        Scanner number = new Scanner(System.in);
-        int choice = number.nextInt();
-        String choice1 = number.nextLine();
 
-        boolean valid = choice > 6;
-
-        while(valid) {
-            if (choice1.equals(1)) {
-                isPalindrom();
-            } else if (choice1.equals(2)) {
-                countLetters();
-            } else if (choice1.equals(3)) {
-                reverseString();
-            } else if (choice1.equals(4)) {
-                getAmountOfLetters();
-            } else if (choice1.equals(5)) {
-                System.out.println("thanks for trying my program!");
-                break;
-            }
-            }
+        while(true) {
+            Scanner c = new Scanner(System.in);
+            String cc = c.nextLine();
+        if(cc.equals("1")){
+            isPalindrome();
+        }
+        else if(cc.equals("2")){
+            CountHowManyWords();
+        }
+        else if(cc.equals("3")){
+            ReverseString();
+        }
+        else if(cc.equals("4")){
+            CountWords();
+        }
+        else if(cc.equals("5")){
+            System.out.println("thinks for using this program!");
+            break;
+        }
+        else{
+            System.out.println("enter a valid number please");
+        }
         }
 
+        
+
+
+
     }
+}
