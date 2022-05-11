@@ -75,7 +75,7 @@ public class StringHelper {
             CountWords();
         }
         else if(cc.equals("5")){
-            System.out.println("thinks for using this program!");
+            System.out.println("thanks for using this program!");
             break;
         }
         else{
